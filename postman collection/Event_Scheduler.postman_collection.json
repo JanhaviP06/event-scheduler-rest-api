@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "b422d516-5319-4b11-b2cf-4eeb313da584",
+		"name": "Event_Scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46275413",
+		"_collection_link": "https://janhavi-7210634.postman.co/workspace/Janhavi's-Workspace~83720c4d-713d-49f0-84db-f90749bea1f9/collection/46275413-b422d516-5319-4b11-b2cf-4eeb313da584?action=share&source=collection_link&creator=46275413"
+	},
+	"item": [
+		{
+			"name": "Create Event",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Office event\",\r\n  \"description\": \"Office Weekly Meeting\",\r\n  \"start_time\": \"2025-07-01 13:00\",\r\n  \"end_time\": \"2025-07-01 14:00\",\r\n  \"recurrence\": \"weekly\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/events",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"events"
+					]
+				},
+				"description": "Create Events POST request."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Events",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/events",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"events"
+					]
+				},
+				"description": "Get events list"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recurrence\": \"weekly\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/events/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"events",
+						"1"
+					]
+				},
+				"description": "Update events PUT request"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recurrence\": \"weekly\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/events/10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"events",
+						"10"
+					]
+				},
+				"description": "Delete event"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Event",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/events/search?query=yoga",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"events",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "yoga"
+						}
+					]
+				},
+				"description": "Search query"
+			},
+			"response": []
+		}
+	]
+}
